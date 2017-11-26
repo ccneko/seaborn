@@ -2784,7 +2784,7 @@ stripplot.__doc__ = dedent("""\
 
 def swarmplot(x=None, y=None, hue=None, data=None, order=None, hue_order=None,
               dodge=False, orient=None, color=None, palette=None,
-              size=5, edgecolor="gray", linewidth=0, ax=None, **kwargs):
+              size=5, edgecolor="gray", linewidth=0, ax=None, marker='o', **kwargs):
 
     if "split" in kwargs:
         dodge = kwargs.pop("split")
@@ -2804,7 +2804,7 @@ def swarmplot(x=None, y=None, hue=None, data=None, order=None, hue_order=None,
         edgecolor = plotter.gray
     kwargs.update(dict(s=size ** 2,
                        edgecolor=edgecolor,
-                       linewidth=linewidth))
+                       linewidth=linewidth, marker=marker))
 
     plotter.plot(ax, kwargs)
     return ax
